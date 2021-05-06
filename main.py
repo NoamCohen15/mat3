@@ -7,9 +7,6 @@ def open_file(path):
     return open(path , encoding="utf-8") 
 
 
-def create_json(l):
-    return
-
 def process_messages(file):
     datetime = r"^(\d{1,2}\.\d{1,2}\.\d{4}, \d{1,2}:\d{1,2})"
     id = r"([^:]+)"
@@ -53,6 +50,7 @@ def process_messages(file):
             if "הוסי" in line:
                 continue
             else:
+                line = line.rstrip()
                 last_dict['text'] = last_dict['text']+line
             
     metadata_dict = dict()
